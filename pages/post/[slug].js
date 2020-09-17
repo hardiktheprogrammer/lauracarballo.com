@@ -2,6 +2,7 @@ import ms from "ms";
 import { promises as fsPromises } from "fs";
 import Markdown from "markdown-to-jsx";
 import Youtube from "../../components/Youtube";
+import Comments from "../../components/Comments";
 
 export default function Post({ post }) {
   return (
@@ -21,6 +22,8 @@ export default function Post({ post }) {
           {post.content}
         </Markdown>
       </div>
+
+      <Comments slug={post.slug} />
       <style jsx>{`
         .post {
           padding: 80px 80px;

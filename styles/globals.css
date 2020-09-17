@@ -16,9 +16,9 @@ body {
   text-align: center;
 }
 
-.page__inner_m120 {
-  margin-top: 120px;
-  margin-bottom: 120px;
+.page__inner_m50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 a {

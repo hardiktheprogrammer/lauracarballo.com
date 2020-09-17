@@ -3,14 +3,17 @@ import Link from "next/link";
 import ms from "ms";
 import { promises as fsPromises } from "fs";
 import Card from "../components/Card";
+import Header from "../components/Header";
 
 export default function Posts({ postList }) {
   return (
-    <div className="page__inner_m120">
+    <div className="">
       <Head>
         <title>Laura - Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Header />
 
       <main className="blog">
         <h1 className="blog__title">
@@ -32,25 +35,25 @@ export default function Posts({ postList }) {
             </div>
           ))}
         </div>
-        <style jsx>{`
-          .blog {
-            display: grid;
-            place-items: center;
-          }
-
-          .blog__title {
-            font-weight: 700;
-            font-size: 50px;
-            letter-spacing: 0.05em;
-            -webkit-text-stroke: 2px #810000;
-            color: #ffd5a5;
-          }
-          .blog__title-bold {
-            color: #810000;
-            text-decoration: underline;
-          }
-        `}</style>
       </main>
+      <style jsx>{`
+        .blog {
+          display: grid;
+          place-items: center;
+        }
+
+        .blog__title {
+          font-weight: 700;
+          font-size: 50px;
+          letter-spacing: 0.05em;
+          -webkit-text-stroke: 2px #810000;
+          color: #ffd5a5;
+        }
+        .blog__title-bold {
+          color: #810000;
+          text-decoration: underline;
+        }
+      `}</style>
     </div>
   );
 }
