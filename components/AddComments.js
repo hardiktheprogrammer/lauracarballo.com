@@ -46,7 +46,9 @@ export default function AddComments({ onSubmit }) {
           </div>
         </>
       ) : (
-        <button onClick={handleLogin}>Login to Add Comment</button>
+        <button className="add__comment__box-button" onClick={handleLogin}>
+          Login to Add Comment
+        </button>
       )}
       <style jsx>{`
         .add__comment__box-textarea {

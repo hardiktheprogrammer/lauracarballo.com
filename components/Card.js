@@ -4,7 +4,6 @@ const Card = ({ title, date }) => {
       <div className="card">
         <div className="card__main">
           <h3 className="card__title">{title}</h3>
-          <img className="card__img" src="/next-js-logo.png" alt="" />
         </div>
         <p className="card__date">{date}</p>
       </div>
