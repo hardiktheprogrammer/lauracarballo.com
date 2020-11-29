@@ -38,7 +38,12 @@ export default function Nav() {
 
         @media only screen and (max-width: 767px) {
           .nav__link {
-            font-size: 16px;
+            font-size: 14px;
+            margin: 0px 20px;
+          }
+
+          .nav {
+            left: 20px;
           }
         }
       `}</style>

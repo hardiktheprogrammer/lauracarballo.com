@@ -17,7 +17,7 @@ export default function Posts({ postList }) {
 
       <Header />
 
-      <main className="blog">
+      <main className="page__inner blog">
         <h1 className="blog__title">
           WELCOME TO MY <span className="blog__title-bold">BLOG</span>
         </h1>
@@ -55,6 +55,15 @@ export default function Posts({ postList }) {
         .blog__title-bold {
           color: #810000;
           text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 767px) {
+          .page__inner {
+            margin: 120px 20px;
+          }
+          .blog__title {
+            font-size: 50px;
+          }
         }
       `}</style>
     </div>

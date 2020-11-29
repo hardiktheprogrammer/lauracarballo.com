@@ -1,5 +1,6 @@
 import Head from "../components/Head";
 import Nav from "../components/Nav";
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
@@ -57,66 +58,25 @@ export default function Home() {
         <section id="projects">
           <div className="projects page__inner page__inner_m120">
             <h3 className="projects__title">CURRENTLY WORKING ON ...</h3>
-            <div className="projects__item">
-              <div className="projects__item-name">Zapien</div>
-              <div className="projects__item-description">
-                <span>
-                  A network that connects ethical and sustainable brands with
-                  conscious influencers and creators.
-                </span>
-                <div className="projects__item-learn-more-container">
-                  <a
-                    className="projects__item-learn-more"
-                    href="https://zapien.co"
-                  >
-                    <div className="projects__item-learn-more-text">
-                      Learn more
-                    </div>
-                    <div className="link-arrow-container">
-                      <span className="link_arrow-first">
-                        <i className="fas fa-arrow-right"></i>
-                      </span>
-                      <span className="link_arrow-second">
-                        <i className="fas fa-arrow-right"></i>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
 
+            <Projects
+              name="Zapien"
+              description="A network that connects ethical and sustainable brands with
+              conscious influencers and creators."
+              website="https://zapien.co"
+            />
+          </div>
           <div className="projects page__inner page__inner_m120">
             <h3 className="projects__title">DEVELOPED AND DEPLOYED ...</h3>
-            <div className="projects__item">
-              <div className="projects__item-name">MotoAlcalá</div>
-              <div className="projects__item-description">
-                <span>
-                  Design and develop a motorbike website built using HTML, CSS
-                  and PHP
-                </span>
-                <div className="projects__item-learn-more-container">
-                  <a
-                    className="projects__item-learn-more"
-                    href="https://www.motoalcala.es/"
-                  >
-                    <div className="projects__item-learn-more-text">
-                      Learn more
-                    </div>
-                    <div className="link-arrow-container">
-                      <span className="link_arrow-first">
-                        <i className="fas fa-arrow-right"></i>
-                      </span>
-                      <span className="link_arrow-second">
-                        <i className="fas fa-arrow-right"></i>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Projects
+              name="MotoAlcalá"
+              description="Design and develop a motorbike website built using HTML, CSS and
+              PHP"
+              website="https://www.motoalcala.es/"
+            />
           </div>
         </section>
+
         <section className="back-to-top">
           <a href="#top">
             <strong>Back to top</strong>
@@ -126,6 +86,7 @@ export default function Home() {
           .page {
             margin: 0;
             padding: 0;
+            width: 100%;
             box-sizing: border-box;
             font-family: "Roboto", sans-serif;
             font-weight: 400;
@@ -265,89 +226,11 @@ export default function Home() {
             padding: 20px 0px;
           }
 
-          /* Projects */
-
           .projects__title {
             font-weight: 700;
             font-size: 22px;
             line-height: 30px;
             letter-spacing: 0.12em;
-          }
-
-          .projects__item {
-            display: flex;
-            margin-top: 50px;
-          }
-
-          .projects__item-name {
-            width: 75px;
-            font-weight: 700;
-            font-size: 22px;
-            text-align: left;
-          }
-
-          .projects__item-description {
-            margin-left: 125px;
-            text-align: left;
-          }
-
-          .projects__item-learn-more {
-            display: flex;
-            position: relative;
-            max-width: 140px;
-            font-size: 17px;
-            font-weight: 700;
-            margin-top: 15px;
-          }
-
-          .projects__item-learn-more:after {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: black;
-            transform: scaleX(1);
-            transform-origin: left center;
-            transition: transform 0.33s linear;
-          }
-          .projects__item-learn-more:hover:after {
-            transform: scaleX(0);
-            transform-origin: right center;
-          }
-
-          .link-arrow-container {
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            width: 15px;
-          }
-
-          .link_arrow-first {
-            position: absolute;
-            left: 0;
-            transform: translateX(0%);
-          }
-
-          .projects__item-learn-more:hover .link_arrow-first {
-            transform: translateX(200%);
-            transition: transform 0.33s linear;
-          }
-
-          .link_arrow-second {
-            position: absolute;
-            transform: translateX(-150%);
-            left: 8px;
-          }
-
-          .projects__item-learn-more:hover .link_arrow-second {
-            transform: translateX(-50%);
-            transition: transform 0.33s linear;
-          }
-
-          .projects__item-learn-more-text {
-            text-transform: uppercase;
           }
 
           .back-to-top {
@@ -357,10 +240,6 @@ export default function Home() {
 
           @media only screen and (max-width: 767px) {
             .page {
-              font-size: 16px;
-            }
-
-            .nav__link {
               font-size: 16px;
             }
 
@@ -395,6 +274,7 @@ export default function Home() {
             .hero__text__social-media {
               position: absolute;
               left: 37px;
+              bottom: -100px;
             }
 
             .about {
@@ -403,10 +283,6 @@ export default function Home() {
 
             .page__inner {
               margin: 120px 20px;
-            }
-
-            .projects__item {
-              font-size: 16px;
             }
           }
         `}</style>

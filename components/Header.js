@@ -19,12 +19,20 @@ export default function Header() {
         {session ? (
           <>
             <img src={session.user.github.avatar} className="user__img" />
-            <a href="#" onClick={handleLogout} className="user__log">
+            <a
+              href="#"
+              onClick={handleLogout}
+              className="user__log user__log-logout"
+            >
               Logout
             </a>
           </>
         ) : (
-          <a href="#" onClick={handleLogin} className="user__log">
+          <a
+            href="#"
+            onClick={handleLogin}
+            className="user__log user__log-login"
+          >
             Login
           </a>
         )}
@@ -49,6 +57,16 @@ export default function Header() {
           border-radius: 50px;
           height: 33px;
           width: 33px;
+        }
+        @media only screen and (max-width: 767px) {
+          .user__log {
+            font-size: 14px;
+            padding: 10px 20px;
+          }
+
+          .user__log-logout {
+            display: none;
+          }
         }
       `}</style>
     </div>

@@ -26,10 +26,11 @@ export default function Post({ post }) {
           </Markdown>
         </div>
 
-        <Comments slug={post.slug} />
         <style jsx>{`
           .post {
-            padding: 140px 140px;
+            display: grid;
+            place-items: center;
+            padding: 140px 140px 0px 140px;
           }
 
           .post__date {
@@ -47,6 +48,28 @@ export default function Post({ post }) {
             text-align: justify;
             border-radius: 5px;
             box-shadow: 0px 0px 2px 1px #810000;
+          }
+          @media only screen and (max-width: 767px) {
+            .post {
+              padding: 140px 10px 0px 10px;
+            }
+            .post__title {
+              font-size: 40px;
+            }
+            .post__content {
+              padding: 0px 10px;
+              text-align: justify;
+              border-radius: none;
+              box-shadow: none;
+            }
+          }
+        `}</style>
+      </div>
+      <div className="comments">
+        <Comments slug={post.slug} />
+        <style jsx>{`
+          .comments {
+            padding: 20px 140px;
           }
         `}</style>
       </div>

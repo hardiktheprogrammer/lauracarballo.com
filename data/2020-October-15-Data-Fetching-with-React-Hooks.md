@@ -10,12 +10,12 @@ _Note: For more **[info](https://developers.google.com/books/)** on how to get a
 
 ## useEffect vs. Class components
 
-For those making the switch from class components, it is easier to understand the process behind the mounting, updating and rendering of each component. But for the code newbies (like me) learning React through hooks, reading about the lifecycle of components may seem rare.
+For those making the switch from class components, it is easier to understand the process behind the mounting, updating and rendering of each component. But for the code newbies (like me) learning React through hooks, reading about the lifecycle of components may seem confusing.
 However, I think that understanding class components when running side effects can be very useful, especially for debugging.
 
 I won’t be covering much on class components, just some basic information that helped me understand the code behind the ‘useEffect’ hook.
 
-On one hand, when using class components, React divides the life of a component into three stages: mounting (component is inserted in the DOM), updating (changing its state) and unmounting (removing it from the DOM).
+On one hand, when using class components, React divides the life of a component into three stages: mounting (component is inserted in the DOM), updating (its state or props change) and unmounting (removing it from the DOM).
 
 On the other hand, functional components do not differentiate between each of the component’s life cycles anymore and combine all of these side effects into one hook, the useEffect.
 
@@ -33,7 +33,7 @@ The first thing we need to do is start our React App. You can either create your
 
 <code>npx create-react-app</code>
 
-or go to my initial commit on **[github]()**.
+or go to my initial commit on **[github](https://github.com/lauracarballo/books-api/tree/step-1)**.
 
 First of all, we’ll keep it simple. Let’s create our App component which will render just an input and a search button:
 
@@ -54,7 +54,7 @@ function App() {
       </header>
 
       <ul className="books">
-        <li className="book-item">
+        <li className="book">
           <div className="book__content">
             <div className="book__content">Book Title</div>
             <div className="book__content">Authors</div>
@@ -93,7 +93,7 @@ function App() {
       <ul className="books">
         {data.items.map((item) => {
           return (
-            <li className="book-item" key={item.id}>
+            <li className="book" key={item.id}>
               {item.volumeInfo.imageLinks && (
                 <img
                   className="book__img"
@@ -154,7 +154,7 @@ function App() {
       <ul className="books">
         {data.items.map((item) => {
           return (
-            <li className="book-item" key={item.id}>
+            <li className="book" key={item.id}>
               {item.volumeInfo.imageLinks && (
                 <img
                   className="book__img"
@@ -228,7 +228,7 @@ function App() {
       <ul className="books">
         {data.items.map((item) => {
           return (
-            <li className="book-item" key={item.id}>
+            <li className="book" key={item.id}>
               {item.volumeInfo.imageLinks && (
                 <img
                   className="book__img"
@@ -281,7 +281,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `https://www.googleapis.com/books/v1/volumes?q=sapien&key=${key}`
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${key}`
       );
       setData(result.data);
     };
@@ -313,7 +313,7 @@ function App() {
       <ul className="books">
         {data.items.map((item) => {
           return (
-            <li className="book-item" key={item.id}>
+            <li className="book" key={item.id}>
               {item.volumeInfo.imageLinks && (
                 <img
                   className="book__img"

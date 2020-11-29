@@ -45,5 +45,12 @@ pre {
 code {
   font-size: 14px;
   background-color: #ffe7cc;
-  
+}
+
+@media only screen and (max-width: 767px) {
+  pre {
+    overflow: scroll;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
 }
