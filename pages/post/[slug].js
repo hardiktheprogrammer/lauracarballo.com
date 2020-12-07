@@ -71,6 +71,12 @@ export default function Post({ post }) {
           .comments {
             padding: 20px 140px;
           }
+          @media only screen and (max-width: 767px) {
+            .comments {
+              padding: 20px 20px;
+              width: 100%;
+            }
+          }
         `}</style>
       </div>
     </>

@@ -157,6 +157,11 @@ export default function Comments({ slug }) {
           background-color: #ea907a;
           color: #900d0d;
         }
+        @media only screen and (max-width: 767px) {
+          .comment {
+            width: 100%;
+          }
+        }
       `}</style>
     </div>
   );

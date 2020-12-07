@@ -74,6 +74,11 @@ export default function Home() {
               PHP"
               website="https://www.motoalcala.es/"
             />
+            <Projects
+              name="My Personal Bookshelf"
+              description="Full Stack App created with React, DynamoDB and AWS lambda to build your own personal bookshelf."
+              website="https://books.lauracarballo.com/"
+            />
           </div>
         </section>
 

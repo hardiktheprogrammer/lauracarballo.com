@@ -81,6 +81,14 @@ export default function AddComments({ onSubmit }) {
           background-color: #810000;
           color: #fff;
         }
+        @media only screen and (max-width: 767px) {
+          .add__comment__box-textarea {
+            width: 100%;
+          }
+          .add__comment__box-row {
+            width: 100%;
+          }
+        }
       `}</style>
     </div>
   );
