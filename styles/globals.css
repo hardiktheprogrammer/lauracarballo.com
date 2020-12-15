@@ -3,14 +3,14 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.5rem;
   letter-spacing: 0.05em;
   color: #000;
   background-color: #ffd5a5;
 }
 
 .page__inner {
-  max-width: 750px;
+  max-width: 60rem;
   margin: 0 auto;
   text-align: center;
 }
@@ -26,7 +26,7 @@ a {
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
@@ -45,6 +45,21 @@ pre {
 code {
   font-size: 14px;
   background-color: #ffe7cc;
+}
+
+.displayNone {
+  display: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 @media only screen and (max-width: 767px) {

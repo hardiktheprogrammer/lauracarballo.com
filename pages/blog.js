@@ -13,9 +13,8 @@ export default function Posts({ postList }) {
         <title>Laura - Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
 
-      <Header />
+      <Header active />
 
       <main className="page__inner blog">
         <h1 className="blog__title">
@@ -47,7 +46,7 @@ export default function Posts({ postList }) {
 
         .blog__title {
           font-weight: 700;
-          font-size: 60px;
+          font-size: 4.75rem;
           letter-spacing: 0.05em;
           -webkit-text-stroke: 2px #810000;
           color: #ffd5a5;

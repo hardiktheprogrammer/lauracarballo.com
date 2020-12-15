@@ -1,5 +1,5 @@
 import Head from "../components/Head";
-import Nav from "../components/Nav";
+import Header from "../components/Header";
 import Projects from "../components/Projects";
 
 export default function Home() {
@@ -7,86 +7,92 @@ export default function Home() {
     <>
       <Head title="Laura Carballo" />
       <body className="page">
-        <Nav />
+        <Header />
 
-        <div className="hero">
-          <div className="hero__text animation-left">
-            <div className="hero__text__title">
-              <h1 className="hero__text__title_bold">LAURA</h1>
-              <h1 className="hero__text__title_stroke">CARBALLO</h1>
+        <main role="main">
+          <section className="hero">
+            <div className="hero__text animation-left">
+              <h1 className="hero__text__title">
+                <div className="hero__text__title_bold">LAURA</div>
+                <div className="hero__text__title_stroke">CARBALLO</div>
+              </h1>
+              <div className="hero__text__undertitle">
+                <h2 className="hero__text_weight400">
+                  Business and Law graduate
+                </h2>
+                <h2>Web Developer</h2>
+              </div>
             </div>
-            <div className="hero__text__undertitle">
-              <h2 className="hero__text_weight400">
-                Business and Law graduate
-              </h2>
-              <h2>Web Developer</h2>
-            </div>
-          </div>
-          <img
-            className="hero__img animation-right"
-            src="/laura.jpeg"
-            alt="Laura wearing a nice red hat"
-          />
-        </div>
-        <div className="hero__text__social-media">
-          <a href="https://github.com/lauracarballo">
-            <i className="fab fa-github"></i>
-          </a>
-          <a href="https://twitter.com/lcarb14">
-            <i className="fab fa-twitter"></i>
-          </a>
-        </div>
+            <img
+              className="hero__img animation-right"
+              src="/laura.jpeg"
+              alt="Laura wearing a nice red hat"
+            />
+          </section>
 
-        <section id="about" className="page__inner page__inner_m120">
-          <div className="about">
-            <p>I'm a code newbie from Spain, based in Sydney, Australia.</p>
+          <section id="socialmedia" className="hero__text__social-media">
+            <a
+              href="https://github.com/lauracarballo"
+              aria-label="Go to Laura's Github Profile"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+            <a
+              href="https://twitter.com/lcarb14"
+              aria-label="Go to Laura's Twitter Profile"
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+          </section>
 
+          <section id="aboutme" className="page__inner page__inner_m120">
+            <h2 className="visually-hidden">About Me</h2>
             <p>
-              The openess of the tech community inspired me to take a leap in my
-              career. After completing a Web Developer Bootcamp I decided to dig
-              deeper into Javascript focusing mainly on React and later Next.JS
+              I’m a front end developer focusing on HTML, CSS and JavaScript to
+              build responsive web applications.
             </p>
 
+            <p>I’m most experienced with React and the NextJS framework.</p>
+
             <p>
-              The ability to use technology for good and learn while doing so
-              inspired me to start my first personal project. I feel driven by
-              being able to execute my ideas while developing new skills.
+              My current interests are Design Systems, Web Accessibility and
+              Serverless (AWS Lambda/DynamoDB).
             </p>
-          </div>
-        </section>
+          </section>
 
-        <section id="projects">
-          <div className="projects page__inner page__inner_m120">
-            <h3 className="projects__title">CURRENTLY WORKING ON ...</h3>
+          <section id="projects">
+            <div className="projects page__inner page__inner_m120">
+              <h3 className="projects__title">CURRENTLY WORKING ON ...</h3>
 
-            <Projects
-              name="Zapien"
-              description="A network that connects ethical and sustainable brands with
+              <Projects
+                name="Zapien"
+                description="A network that connects ethical and sustainable brands with
               conscious influencers and creators."
-              website="https://zapien.co"
-            />
-          </div>
-          <div className="projects page__inner page__inner_m120">
-            <h3 className="projects__title">DEVELOPED AND DEPLOYED ...</h3>
-            <Projects
-              name="MotoAlcalá"
-              description="Design and develop a motorbike website built using HTML, CSS and
+                website="https://zapien.co"
+              />
+            </div>
+            <div className="projects page__inner page__inner_m120">
+              <h3 className="projects__title">DEVELOPED AND DEPLOYED ...</h3>
+              <Projects
+                name="MotoAlcalá"
+                description="Design and develop a motorbike website built using HTML, CSS and
               PHP"
-              website="https://www.motoalcala.es/"
-            />
-            <Projects
-              name="My Personal Bookshelf"
-              description="Full Stack App created with React, DynamoDB and AWS lambda to build your own personal bookshelf."
-              website="https://books.lauracarballo.com/"
-            />
-          </div>
-        </section>
+                website="https://www.motoalcala.es/"
+              />
+              <Projects
+                name="My Personal Bookshelf"
+                description="Full Stack App created with React, DynamoDB and AWS lambda to build your own personal bookshelf."
+                website="https://books.lauracarballo.com/"
+              />
+            </div>
+          </section>
 
-        <section className="back-to-top">
-          <a href="#top">
-            <strong>Back to top</strong>
-          </a>
-        </section>
+          <section className="back-to-top">
+            <a href="#top">
+              <strong>Back to top</strong>
+            </a>
+          </section>
+        </main>
         <style jsx>{`
           .page {
             margin: 0;
@@ -105,12 +111,6 @@ export default function Home() {
           a {
             color: #000;
             text-decoration: none;
-          }
-
-          .page__inner {
-            max-width: 750px;
-            margin: 0 auto;
-            text-align: center;
           }
 
           .page__inner_m120 {
@@ -159,7 +159,7 @@ export default function Home() {
 
           .hero__text__title {
             font-weight: 700;
-            font-size: 50px;
+            font-size: 7rem;
             letter-spacing: 0.05em;
           }
 
@@ -227,13 +227,13 @@ export default function Home() {
 
           /* About */
 
-          .about {
+          #aboutme {
             padding: 20px 0px;
           }
 
           .projects__title {
             font-weight: 700;
-            font-size: 22px;
+            font-size: 2rem;
             line-height: 30px;
             letter-spacing: 0.12em;
           }

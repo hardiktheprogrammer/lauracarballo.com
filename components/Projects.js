@@ -21,14 +21,14 @@ export default function Projects({ name, description, website }) {
       <style jsx>{`
         .projects__item {
           display: grid;
-          grid-template-columns: 30% 70%;
+          grid-template-columns: 40% 60%;
           margin-top: 50px;
           text-align: left;
         }
 
         .projects__item-name {
           font-weight: 700;
-          font-size: 22px;
+          font-size: 1.5rem;
         }
 
         .projects__item-learn-more {
@@ -96,9 +96,6 @@ export default function Projects({ name, description, website }) {
             grid-template-columns: none;
             font-size: 16px;
             text-align: center;
-          }
-
-          .projects__item-name {
           }
 
           .projects__item-description {

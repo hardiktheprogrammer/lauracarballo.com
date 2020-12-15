@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/client";
+import Nav from "./Nav";
 
-export default function Header() {
+export default function Header({ active }) {
   const [session] = useSession();
 
   const handleLogin = (e) => {
@@ -14,8 +15,9 @@ export default function Header() {
   };
 
   return (
-    <div className="header">
-      <div className="user__login">
+    <header role="banner">
+      <Nav />
+      <div className={active ? "user__login" : "displayNone"}>
         {session ? (
           <>
             <img src={session.user.github.avatar} className="user__img" />
@@ -38,10 +40,9 @@ export default function Header() {
         )}
       </div>
       <style jsx>{`
-        .header {
+        header {
           display: block;
           text-align: right;
-          padding: 10px;
         }
         .user__login {
           display: flex;
@@ -50,7 +51,7 @@ export default function Header() {
         .user__log {
           display: flex;
           align-items: center;
-          padding: 0px 10px;
+          padding: 15px 10px;
         }
 
         .user__img {
@@ -69,6 +70,6 @@ export default function Header() {
           }
         }
       `}</style>
-    </div>
+    </header>
   );
 }

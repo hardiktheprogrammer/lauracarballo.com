@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <div className="nav">
+    <nav role="navigation">
       <a className="nav__link" href="/">
         HOME
       </a>
@@ -12,14 +12,13 @@ export default function Nav() {
       </a>
 
       <style jsx>{`
-        .nav {
+        nav {
           position: absolute;
           left: 55px;
           display: flex;
           align-content: flex-start;
           margin-top: 20px;
           font-weight: 400;
-          font-size: 18px;
           letter-spacing: 0.1em;
           z-index: 1;
         }
@@ -28,7 +27,7 @@ export default function Nav() {
           display: block;
           margin: 0px 30px;
           font-weight: 400;
-          font-size: 18px;
+          font-size: 20px;
           letter-spacing: 0.1em;
         }
 
@@ -47,6 +46,6 @@ export default function Nav() {
           }
         }
       `}</style>
-    </div>
+    </nav>
   );
 }
