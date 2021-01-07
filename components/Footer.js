@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <div className="copyright">© 2020, Laura Carballo</div>
+      <div className="copyright">© 2021, Laura Carballo. Build with NextJS</div>
       <style jsx>{`
         footer {
           display: flex;

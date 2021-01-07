@@ -115,9 +115,18 @@ export default function Home() {
             />
           </div>
         </section>
-        {/* <h2 className="h2__mobile">Contact</h2>
+        <h2 className="h2__mobile">Contact</h2>
         <section id="contact">
-          <Form>
+          <Form
+            onSubmit={(event) => {
+              const { name, email, message } = event.target;
+              return {
+                name: name.value,
+                email: email.value,
+                content: message.value,
+              };
+            }}
+          >
             <Input name="name" label="Name" />
             <Input name="email" type="email" label="Email" />
             <TextArea name="message" label="Message" />
@@ -148,7 +157,7 @@ export default function Home() {
               <i className="icon fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
           </div>
-        </section> */}
+        </section>
       </main>
       <Footer />
 
@@ -191,7 +200,7 @@ export default function Home() {
           position: absolute;
           right: 0;
           bottom: 0px;
-          width: 45vw;
+          width: 50vw;
           height: auto;
         }
 

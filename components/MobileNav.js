@@ -56,10 +56,10 @@ export function MenuBar({ open }) {
       <a className="mobile-link" href="/">
         Home
       </a>
-      <a className="mobile-link" href="/brands">
+      <a className="mobile-link" href="/#projects">
         Projects
       </a>
-      <a className="mobile-link" href="/contact">
+      <a className="mobile-link" href="/#contact">
         Contact
       </a>
       <style jsx>{`

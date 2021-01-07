@@ -1,6 +1,11 @@
 import Button from "./Button";
 import { forwardRef, useState } from "react";
 
+const IS_LOCAL = false;
+const API_URL = IS_LOCAL
+  ? "http://localhost:5000"
+  : "https://185xknb9yl.execute-api.us-east-1.amazonaws.com";
+
 export const Input = forwardRef(
   ({ name, label, type = "text", error, ...props }, ref) => {
     return (
@@ -90,6 +95,7 @@ export const TextArea = forwardRef(({ name, label, error }, ref) => {
           width: auto;
           border-radius: 4px;
           border: 1px solid;
+          font-family: inherit;
           border-color: ${error ? "#ca3c25" : "#ddd"};
         }
 
@@ -116,14 +122,20 @@ const Form = ({ onSubmit, children }) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setLoading(true);
-    event.persist();
     try {
-      await onSubmit(event);
-      event.target.reset();
-      setLoading(false);
-    } catch (err) {
-      setLoading(false);
+      setLoading(true);
+      const data = onSubmit(event);
+      const response = await fetch(`${API_URL}/dev/email/send`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }).then((res) => res.json());
+
+      if (response.success === true) {
+        setLoading(false);
+      }
+    } catch (error) {
+      alert(error.message);
     }
   }
 
