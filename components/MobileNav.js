@@ -50,16 +50,24 @@ export default function Burger({ open, setOpen }) {
   );
 }
 
-export function MenuBar({ open }) {
+export function MenuBar({ open, setOpen }) {
   return (
     <div className="menu">
-      <a className="mobile-link" href="/">
+      <a onClick={() => setOpen(!open)} className="mobile-link" href="/">
         Home
       </a>
-      <a className="mobile-link" href="/#projects">
+      <a
+        onClick={() => setOpen(!open)}
+        className="mobile-link"
+        href="/#projects"
+      >
         Projects
       </a>
-      <a className="mobile-link" href="/#contact">
+      <a
+        onClick={() => setOpen(!open)}
+        className="mobile-link"
+        href="/#contact"
+      >
         Contact
       </a>
       <style jsx>{`
