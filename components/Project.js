@@ -35,6 +35,8 @@ export default function Project({
         .project__image {
           width: 40vw;
           height: auto;
+          box-shadow: 4px 4px 10px 0px #ffefde;
+          border-radius: 20px;
         }
 
         .project__container {

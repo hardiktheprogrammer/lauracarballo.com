@@ -1,6 +1,6 @@
-export default function Button({ children }) {
+export default function Button({ onClick, children }) {
   return (
-    <button>
+    <button onClick={onClick}>
       {children}
       <style jsx>{`
         button {

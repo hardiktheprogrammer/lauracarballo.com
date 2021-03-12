@@ -80,17 +80,11 @@ export default function Nav() {
 
       <style jsx>{`
         .nav-primary {
-          position: absolute;
-          right: 75px;
-          display: flex;
-          align-content: flex-start;
-          margin-top: 25px;
-          font-weight: 400;
-          letter-spacing: 0.1em;
-          z-index: 1;
+          display: none;
+         
         }
         .mobile-menu {
-            display: none;
+            display: block;
         }
 
         @media only screen and (max-width: 768px) {

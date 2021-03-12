@@ -12,6 +12,7 @@ import Icons, {
   AWSLambdaIcon,
   AccessibilityIcon,
 } from "../components/Icons";
+import MainLink from "../components/MainLink";
 import Project from "../components/Project";
 
 export default function Home() {
@@ -23,20 +24,17 @@ export default function Home() {
         <Nav />
         <div className="hero">
           <div className="hero__text animation-left">
+            <h3 className="hero__text__greeting">Hello, i'm</h3>
             <h1 className="hero__text__title">
               <span className="hero__text__title_bold">Laura</span>
               <span className="hero__text__title_stroke">Carballo</span>
             </h1>
             <p className="hero__text__about">
-              I’m a front end developer focusing on <strong>HTML</strong>,{" "}
-              <strong>CSS</strong> and <strong>JavaScript</strong> to build
-              responsive web applications. <br />
-              I’m most experienced with <strong>React</strong> and the{" "}
-              <strong>NextJS</strong> framework. <br />
-              My current interests are <strong>Design Systems</strong>,{" "}
-              <strong>Web Accessibility</strong> and{" "}
-              <strong>Serverless </strong> (AWS Lambda/DynamoDB). <br />
+              <span className="hero__text__about__title">
+                Front-end Developer
+              </span>
             </p>
+            <MainLink href="/about">Get to know me</MainLink>
           </div>
           <img
             className="hero__img animation-right"
@@ -71,6 +69,22 @@ export default function Home() {
             description="I designed and created a website for a motorbike shop."
             liveLink="https://motoalcala.es/"
             codeLink="https://github.com/lauracarballo/moto-alcala"
+          />
+          <Project
+            image="/interactive-pricing-screenshot.png"
+            title="FEM - Interactive Pricing Component"
+            subtitle="Component built using React and Styled Components"
+            description="I built this interactive pricing component following the Frontend Mentor design and styling guidances. The main challenge was to use the slider and toggle to see prices for different page view numbers."
+            liveLink="https://interactive-pricing-component-fem.netlify.app/"
+            codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
+          />
+          <Project
+            image="/crowdfunding-product-page-screenshot.png"
+            title="FEM - Crowdfunding Product Page"
+            subtitle="App built using React and Styled Components. Backend built using Express.js"
+            description="I built a crowdfunding product page following the Frontend Mentor design and styling guidances. The user will be able to see an update in the progress bar and total money raised based on their pledge total after confirming a pledge."
+            liveLink="https://crowdfunding-product-page-fem.netlify.app/"
+            codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
           />
         </section>
 
@@ -163,22 +177,33 @@ export default function Home() {
 
       <style jsx>{`
         header {
-          min-height: 650px;
+          height: 700px;
           position: relative;
+          width: 100%;
+          padding: 65px 0;
         }
 
         .hero {
           max-width: 50%;
-          margin: 8vh;
-          padding: 0 5vw;
+          margin: 0 120px;
+        }
+
+        .hero__text__greeting {
+          margin-block-start: 0em;
+          margin-block-end: 0em;
         }
 
         .hero__text__about {
           max-width: 35vw;
           line-height: 1.5;
-          margin: 20px 0;
+          font-size: 22px;
+          color: #000;
         }
 
+        .hero__text__about__title {
+          font-size: 35px;
+          color: #810000;
+        }
         .hero__text__title_bold {
           display: block;
           color: #810000;
@@ -187,18 +212,18 @@ export default function Home() {
         .hero__text__title_stroke {
           display: block;
           -webkit-text-stroke: 2px #810000;
-          color: #fee4c7;
+          color: #ffefde;
         }
 
         .projects__title {
           position: absolute;
           left: 8vw;
-          bottom: 0px;
+          bottom: -15px;
         }
 
         .hero__img {
           position: absolute;
-          right: 0;
+          right: -10px;
           bottom: 0px;
           width: 50vw;
           height: auto;
@@ -256,7 +281,15 @@ export default function Home() {
           margin: 30px;
         }
 
+        .load {
+          width: 15%;
+          margin: 0 auto;
+        }
+
         @media only screen and (max-width: 768px) {
+          header {
+            height: 900px;
+          }
           .hero {
             max-width: 100%;
             margin: 5vh 0;
@@ -268,6 +301,8 @@ export default function Home() {
             width: 100%;
             height: 350px;
             object-fit: cover;
+            right: 2px;
+            top: 30px;
           }
 
           .hero__text__about {

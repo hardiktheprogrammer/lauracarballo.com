@@ -122,6 +122,7 @@ const Form = ({ onSubmit, children }) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     try {
       setLoading(true);
       const data = onSubmit(event);
@@ -153,7 +154,7 @@ const Form = ({ onSubmit, children }) => {
         form {
           height: auto;
           width: 60%;
-          background-color: #fee4c7;
+          background-color: #ffefde;
           border: 2px solid #810000;
           box-shadow: 4px 4px 4px #810000;
         }
