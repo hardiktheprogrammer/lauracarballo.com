@@ -17,45 +17,40 @@ export default function Project({
         <div className="project__description">
           <span>{description}</span>
         </div>
-        <div className="projects__link">
-          <StyledLink href={liveLink}>Live</StyledLink>
-          <StyledLink href={codeLink}>Code</StyledLink>
-        </div>
+      </div>
+      <div className="projects__link">
+        <StyledLink href={liveLink}>Live</StyledLink>
+        <StyledLink href={codeLink}>Code</StyledLink>
       </div>
       <style jsx>{`
         .project {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          margin: 80px 0;
+          padding: 0px 20px;
+          max-width: 50%;
         }
 
         .project__image {
-          width: 40vw;
+          width: 100%;
           height: auto;
-          box-shadow: 4px 4px 10px 0px #ffefde;
-          border-radius: 20px;
-        }
-
-        .project__container {
-          padding: 0 40px;
+          margin-bottom: 20px;
+          min-height: 300px;
         }
 
         .projects__link {
           margin: 30px 0;
         }
 
+        .project__container {
+          min-height: 235px;
+        }
+
         @media only screen and (max-width: 768px) {
           .project {
-            display: flex;
-            flex-direction: column;
+            max-width: 100%;
+            margin: 10px 0;
           }
 
           .project__image {
-            width: 80vw;
-            height: auto;
+            min-height: 0;
           }
 
           .project__container {

@@ -79,12 +79,20 @@ export default function Nav() {
       </div>
 
       <style jsx>{`
+        nav {
+          margin: 40px 50px 0 50px;
+        }
+        
         .nav-primary {
-          display: none;
+          display: flex;
+          justify-content: flex-end;
+          font-weight: 400;
+          letter-spacing: -0.1em;
+          z-index: 1;
          
         }
         .mobile-menu {
-            display: block;
+            display: none;
         }
 
         @media only screen and (max-width: 768px) {

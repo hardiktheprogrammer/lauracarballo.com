@@ -20,14 +20,15 @@ export default function Home() {
     <>
       <Head title="Laura Carballo" />
 
+      <Nav />
+
       <header>
-        <Nav />
         <div className="hero">
           <div className="hero__text animation-left">
-            <h3 className="hero__text__greeting">Hello, i'm</h3>
             <h1 className="hero__text__title">
+              <span className="hero__text__title_small">Hello, I'm</span>
               <span className="hero__text__title_bold">Laura</span>
-              <span className="hero__text__title_stroke">Carballo</span>
+              <span className="hero__text__title_bold">Carballo</span>
             </h1>
             <p className="hero__text__about">
               <span className="hero__text__about__title">
@@ -42,50 +43,85 @@ export default function Home() {
             alt="Laura wearing a nice red hat"
           />
         </div>
-        <h2 className="projects__title">Projects</h2>
+        <div className="projects__animation">
+          <h2 className="projects__title">Projects</h2>
+          <div className="projects__svg">
+            {/* <svg
+              width="102"
+              height="31"
+              viewBox="0 0 102 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M96.6464 30.3536C96.8417 30.5488 97.1583 30.5488 97.3536 30.3536L100.536 27.1716C100.731 26.9763 100.731 26.6597 100.536 26.4645C100.34 26.2692 100.024 26.2692 99.8284 26.4645L97 29.2929L94.1716 26.4645C93.9763 26.2692 93.6597 26.2692 93.4645 26.4645C93.2692 26.6597 93.2692 26.9763 93.4645 27.1716L96.6464 30.3536ZM96.5 17V30H97.5V17H96.5Z"
+                fill="#810000"
+              />
+              <path
+                d="M84.9999 5.49999C98.1188 5.38114 97.1259 6.35697 96.9998 16.9999"
+                stroke="#810000"
+              />
+              <line x1="85" y1="5.5" y2="5.5" stroke="#810000" />
+            </svg> */}
+          </div>
+        </div>
       </header>
       <main>
         <section id="projects">
-          <Project
-            image="/bookshelf-readme.png"
-            title="My Bookshelf"
-            subtitle="Full Stack App created with React, DynamoDB and AWS lambda to build your own personal bookshelf"
-            description="I started this app to keep track of the books I had read and wished to read throughout the year and I later added a login and sign up page to allow others to build their own bookshelf too."
-            codeLink="https://github.com/lauracarballo/books-api"
-            liveLink="http://books.lauracarballo.com/"
-          />
-          <Project
-            image="/zapien-screenshot.png"
-            title="Zapien"
-            subtitle="Full Stak App built with the NextJS framework and serverless backend using NodeJS in AWS Lambda."
-            description="A network that connects ethical and sustainable brands with conscious influencers and creators."
-            liveLink="https://zapien.co/"
-            codeLink=""
-          />
-          <Project
-            image="/motoalcala-screenshot.png"
-            title="MotoAlcala"
-            subtitle="Website built using HTML, combining the Bootstrap framework and custom CSS for styling. Back office for administration purposes using PHP and simple text-based database."
-            description="I designed and created a website for a motorbike shop."
-            liveLink="https://motoalcala.es/"
-            codeLink="https://github.com/lauracarballo/moto-alcala"
-          />
-          <Project
-            image="/interactive-pricing-screenshot.png"
-            title="FEM - Interactive Pricing Component"
-            subtitle="Component built using React and Styled Components"
-            description="I built this interactive pricing component following the Frontend Mentor design and styling guidances. The main challenge was to use the slider and toggle to see prices for different page view numbers."
-            liveLink="https://interactive-pricing-component-fem.netlify.app/"
-            codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
-          />
-          <Project
-            image="/crowdfunding-product-page-screenshot.png"
-            title="FEM - Crowdfunding Product Page"
-            subtitle="App built using React and Styled Components. Backend built using Express.js"
-            description="I built a crowdfunding product page following the Frontend Mentor design and styling guidances. The user will be able to see an update in the progress bar and total money raised based on their pledge total after confirming a pledge."
-            liveLink="https://crowdfunding-product-page-fem.netlify.app/"
-            codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
-          />
+          <div className="row">
+            <Project
+              image="/bookshelf-readme.png"
+              title="My Bookshelf"
+              subtitle="Full Stack App created with React, DynamoDB and AWS lambda to build your own personal bookshelf"
+              description="I started this app to keep track of the books I had read and wished to read throughout the year and I later added a login and sign up page to allow others to build their own bookshelf too."
+              codeLink="https://github.com/lauracarballo/books-api"
+              liveLink="http://books.lauracarballo.com/"
+            />
+            <Project
+              image="/zapien-screenshot.png"
+              title="Zapien"
+              subtitle="Full Stak App built with the NextJS framework and serverless backend using NodeJS in AWS Lambda."
+              description="A network that connects ethical and sustainable brands with conscious influencers and creators."
+              liveLink="https://zapien.co/"
+              codeLink=""
+            />
+          </div>
+          <div className="row">
+            <Project
+              image="/motoalcala-screenshot.png"
+              title="MotoAlcala"
+              subtitle="Website built using HTML, combining the Bootstrap framework and custom CSS for styling. Back office for administration purposes using PHP and simple text-based database."
+              description="I designed and created a website for a motorbike shop."
+              liveLink="https://motoalcala.es/"
+              codeLink="https://github.com/lauracarballo/moto-alcala"
+            />
+            <Project
+              image="/interactive-pricing-screenshot.png"
+              title="FEM - Interactive Pricing Page"
+              subtitle="Component built using React and Styled Components"
+              description="I built this interactive pricing component following the Frontend Mentor design and styling guidances. The main challenge was to use the slider and toggle to see prices for different page view numbers."
+              liveLink="https://interactive-pricing-component-fem.netlify.app/"
+              codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
+            />
+          </div>
+          <div className="row">
+            <Project
+              image="/crowdfunding-product-page-screenshot.png"
+              title="FEM - Crowdfunding Product Page"
+              subtitle="App built using React and Styled Components. Backend built using Express.js"
+              description="I built a crowdfunding product page following the Frontend Mentor design and styling guidances. The user will be able to see an update in the progress bar and total money raised based on their pledge total after confirming a pledge."
+              liveLink="https://crowdfunding-product-page-fem.netlify.app/"
+              codeLink="https://github.com/lauracarballo/crowdfunding-product-page-fem"
+            />
+            <Project
+              image="/chat-app-screenshot.png"
+              title="FEM - Chat App"
+              subtitle="App built using React and Styled Components."
+              description="I tested my CSS skills building a mobile component for a chat app following the Frontend Mentor design and styling guidances."
+              liveLink="https://chat-app-fem.netlify.app/"
+              codeLink="https://github.com/lauracarballo/chat-app-fem"
+            />
+          </div>
         </section>
 
         <section id="skills">
@@ -129,47 +165,50 @@ export default function Home() {
             />
           </div>
         </section>
-        <h2 className="h2__mobile">Contact</h2>
+
         <section id="contact">
-          <Form
-            onSubmit={(event) => {
-              const { name, email, message } = event.target;
-              return {
-                name: name.value,
-                email: email.value,
-                content: message.value,
-              };
-            }}
-          >
-            <Input name="name" label="Name" />
-            <Input name="email" type="email" label="Email" />
-            <TextArea name="message" label="Message" />
-          </Form>
-          <div>
-            <a
-              href="https://github.com/lauracarballo"
-              aria-label="Go to Laura's Github Profile"
+          <h2 className="h2__mobile">Contact</h2>
+          <div className="contact__container">
+            <Form
+              onSubmit={(event) => {
+                const { name, email, message } = event.target;
+                return {
+                  name: name.value,
+                  email: email.value,
+                  content: message.value,
+                };
+              }}
             >
-              <i className="icon fab fa-github"></i>
-            </a>
-            <a
-              href="https://twitter.com/lcarb14"
-              aria-label="Go to Laura's Twitter Profile"
-            >
-              <i className="icon fab fa-twitter"></i>
-            </a>
-            <a
-              href="mailto:laura.carballo14@gmail.com"
-              aria-label="Write an email to Laura"
-            >
-              <i className="icon fa fa-envelope" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/laura-carballo-arjona-8b6808114/"
-              aria-label="Go to Laura's Linkedin Profile"
-            >
-              <i className="icon fab fa-linkedin-in" aria-hidden="true"></i>
-            </a>
+              <Input name="name" label="Name" />
+              <Input name="email" type="email" label="Email" />
+              <TextArea name="message" label="Message" />
+            </Form>
+            <div>
+              <a
+                href="https://github.com/lauracarballo"
+                aria-label="Go to Laura's Github Profile"
+              >
+                <i className="icon fab fa-github"></i>
+              </a>
+              <a
+                href="https://twitter.com/lcarb14"
+                aria-label="Go to Laura's Twitter Profile"
+              >
+                <i className="icon fab fa-twitter"></i>
+              </a>
+              <a
+                href="mailto:laura.carballo14@gmail.com"
+                aria-label="Write an email to Laura"
+              >
+                <i className="icon fa fa-envelope" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/laura-carballo-arjona-8b6808114/"
+                aria-label="Go to Laura's Linkedin Profile"
+              >
+                <i className="icon fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -177,15 +216,13 @@ export default function Home() {
 
       <style jsx>{`
         header {
-          height: 700px;
+          height: 650px;
           position: relative;
           width: 100%;
-          padding: 65px 0;
         }
 
         .hero {
-          max-width: 50%;
-          margin: 0 120px;
+          padding: 0 70px;
         }
 
         .hero__text__greeting {
@@ -204,6 +241,12 @@ export default function Home() {
           font-size: 35px;
           color: #810000;
         }
+
+        .hero__text__title_small {
+          font-size: 2.8rem;
+          font-weight: 400;
+          letter-spacing: 0.05em;
+        }
         .hero__text__title_bold {
           display: block;
           color: #810000;
@@ -215,10 +258,25 @@ export default function Home() {
           color: #ffefde;
         }
 
-        .projects__title {
+        #projects {
+          padding: 0px 50px;
+        }
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 0 0 100px 0;
+        }
+
+        .projects__animation {
           position: absolute;
-          left: 8vw;
+          left: 5vw;
           bottom: -15px;
+        }
+        .projects__svg {
+          position: absolute;
+          bottom: 35px;
         }
 
         .hero__img {
@@ -227,6 +285,10 @@ export default function Home() {
           bottom: 0px;
           width: 50vw;
           height: auto;
+        }
+
+        #skills {
+          padding: 0 70px;
         }
 
         .skills-icons {
@@ -240,10 +302,13 @@ export default function Home() {
         }
 
         #contact {
+          padding: 0 70px;
+        }
+
+        .contact__container {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin: 50px 0;
         }
 
          {
@@ -309,10 +374,18 @@ export default function Home() {
             max-width: 100%;
           }
 
+          #projects {
+            padding: 0;
+          }
           .projects__title {
             position: relative;
-            left: 0;
-            padding-left: 8vw;
+            left: 9vw;
+            bottom: 75px;
+          }
+
+          .row {
+            flex-direction: column;
+            margin: 0 0 20px 0;
           }
 
           .h2__mobile {
@@ -324,9 +397,16 @@ export default function Home() {
           }
 
           #contact {
-            flex-direction: column;
+            padding: 0;
           }
 
+          #skills {
+            padding: 0;
+          }
+
+          .contact__container {
+            flex-direction: column;
+          }
           .icon {
             margin: 50px 15px;
           }

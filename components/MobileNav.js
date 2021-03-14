@@ -8,7 +8,7 @@ export default function Burger({ open, setOpen }) {
       <style jsx>{`
         .mobile-button {
           position: absolute;
-          top: 10%;
+          top: 3%;
           right: 2rem;
           display: flex;
           flex-direction: column;

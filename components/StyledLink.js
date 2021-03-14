@@ -14,7 +14,7 @@ export default function StyledLink({ href, children }) {
           padding: 10px;
           background-color: #810000;
           color: #fff;
-          margin: 20px;
+          margin-right: 20px;
           text-transform: uppercase;
           font-weight: 700;
         }

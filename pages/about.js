@@ -31,7 +31,7 @@ export default function About() {
             <p>
               My interest for web development began about a year ago when
               joining a bootcamp and learning{" "}
-              <strong>HTML, CSS, and JavaScript</strong>. I feel in love with
+              <strong>HTML, CSS, and JavaScript</strong>. I fell in love with
               the endless creativity and autonomy that comes with writing
               software.
             </p>
@@ -89,7 +89,7 @@ export default function About() {
           .hero__text__title_stroke {
             display: block;
             -webkit-text-stroke: 2px #810000;
-            color: #ffefde;
+            color: #fff;
           }
 
           .hero__text__subtitle {
