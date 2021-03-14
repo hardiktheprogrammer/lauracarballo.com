@@ -46,7 +46,7 @@ export default function Project({
         @media only screen and (max-width: 768px) {
           .project {
             max-width: 100%;
-            margin: 10px 0;
+            margin: 20px 0;
           }
 
           .project__image {

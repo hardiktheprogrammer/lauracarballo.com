@@ -353,7 +353,7 @@ export default function Home() {
 
         @media only screen and (max-width: 768px) {
           header {
-            height: 900px;
+            height: 820px;
           }
           .hero {
             max-width: 100%;
@@ -377,10 +377,13 @@ export default function Home() {
           #projects {
             padding: 0;
           }
+
+          .projects__animation {
+            position: static;
+            text-align: center;
+          }
           .projects__title {
-            position: relative;
-            left: 9vw;
-            bottom: 75px;
+            position: static;
           }
 
           .row {
