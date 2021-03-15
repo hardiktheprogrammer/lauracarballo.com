@@ -30,8 +30,9 @@ li {
 }
 
 main {
-  margin: 100px 0;
+  margin: 100px auto;
   line-height: 1.5;
+  max-width: 1300px;
 }
 
 h1 {

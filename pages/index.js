@@ -219,6 +219,7 @@ export default function Home() {
           height: 650px;
           position: relative;
           width: 100%;
+          max-width: 1300px;
         }
 
         .hero {
