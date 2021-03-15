@@ -81,6 +81,7 @@ export default function Nav() {
       <style jsx>{`
         nav {
           margin: 40px 50px 0 50px;
+          
         }
         
         .nav-primary {
@@ -89,7 +90,8 @@ export default function Nav() {
           font-weight: 400;
           letter-spacing: -0.1em;
           z-index: 1;
-         
+          max-width: 1320px;
+          margin: 0 auto;   
         }
         .mobile-menu {
             display: none;

@@ -219,7 +219,8 @@ export default function Home() {
           height: 650px;
           position: relative;
           width: 100%;
-          max-width: 1300px;
+          max-width: 1320px;
+          margin: 0 auto;
         }
 
         .hero {
@@ -272,7 +273,7 @@ export default function Home() {
 
         .projects__animation {
           position: absolute;
-          left: 5vw;
+          left: 60px;
           bottom: -15px;
         }
         .projects__svg {
@@ -284,7 +285,7 @@ export default function Home() {
           position: absolute;
           right: -10px;
           bottom: 0px;
-          width: 50vw;
+          width: 50%;
           height: auto;
         }
 
