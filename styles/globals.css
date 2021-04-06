@@ -26,7 +26,6 @@ body {
 ul,
 li {
   text-decoration: none;
-  font-size: 1.25rem;
 }
 
 main {
@@ -57,9 +56,15 @@ h2 {
 h3 {
   font-size: 2rem;
   font-weight: 400;
+  color: #810000;
   letter-spacing: 0.05em;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+p {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .page__inner {

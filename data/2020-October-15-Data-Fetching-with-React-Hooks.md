@@ -8,7 +8,7 @@ If you’re familiar with Google’s APIs you’ll already know that they requir
 
 _Note: For more **[info](https://developers.google.com/books/)** on how to get an API key._
 
-## useEffect vs. Class components
+### useEffect vs. Class components
 
 For those making the switch from class components, it is easier to understand the process behind the mounting, updating and rendering of each component. But for the code newbies (like me) learning React through hooks, reading about the lifecycle of components may seem confusing.
 However, I think that understanding class components when running side effects can be very useful, especially for debugging.
@@ -27,7 +27,7 @@ There are two types of side effects: require clean up or not.
 
 We use a clean up when, once the update within the useEffect is completed, we need to forget about it. A good example are event listeners. To add a clean up we need to add a ‘return’ inside the useEffect function.
 
-## Ready… Let’s get started!
+### Ready… Let’s get started!
 
 The first thing we need to do is start our React App. You can either create your own App from scratch with
 
@@ -72,7 +72,7 @@ Inside our App component we’ll use useState() to set the local state to an obj
 
 Our data will be rendered through a .map() function that returns each item’s image, title and authors.
 
-```javascript
+```js
 import React, { useState } from "react";
 
 function App() {
@@ -120,7 +120,7 @@ Now a side effect is required to access Google’s external API. Therefore, we f
 
 To simplify data fetching I’ve used axios which removes the need to pass the results of the HTTPS request to the .json() method. Axios returns the data object you expect straight away. Redaxios simply provides the same axios API but in 800 bytes.
 
-```javascript
+```js
 import React, { useState, useEffect } from "react";
 import axios from "redaxios";
 
@@ -183,11 +183,11 @@ To solve this problem, you can tell react how to skip applying an effect if cert
 
 _Note: Using an async function directly in React useEffect isn’t allowed as async functions return a promise. The useEffect hook should only return nothing or a clean up function._
 
-## Adding a query
+### Adding a query
 
 Le’ts try to add a query parameter to our API so we can search through the Google Books library. We can do this by adding a useState hook that sets the query to the value typed into the input field. Consequently, we need to pass an event listener through the onChange function to save the typed value and setQuery to that value.
 
-```javascript
+```js
 import React, { useState, useEffect } from "react";
 import axios from "redaxios";
 
@@ -253,7 +253,7 @@ export default App;
 
 Also, a small modification on Google’s Api needs to be made so we can pass ‘query’ for our search.
 
-```javascript
+```js
 useEffect(() => {
   const fetchData = async () => {
     const result = await axios(
@@ -267,7 +267,7 @@ useEffect(() => {
 
 To finish up we need a button that triggers the search so we’ll add an onClick function to our existing button.
 
-```javascript
+```js
 import React, { useState, useEffect } from "react";
 import axios from "redaxios";
 
@@ -338,7 +338,7 @@ export default App;
 
 Since we are restricting the api call to our button being clicked we need to specify that into our useEffect function.
 
-```javascript
+```js
 useEffect(() => {
   const fetchData = async () => {
     const result = await axios(

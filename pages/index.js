@@ -1,3 +1,5 @@
+import Posts from "../components/blog";
+import { promises as fsPromises } from "fs";
 import Footer from "../components/Footer";
 import Form, { Input, TextArea } from "../components/Form";
 import Head from "../components/Head";
@@ -15,7 +17,7 @@ import Icons, {
 import MainLink from "../components/MainLink";
 import Project from "../components/Project";
 
-export default function Home() {
+export default function Home({ postList }) {
   return (
     <>
       <Head title="Laura Carballo" />
@@ -123,7 +125,10 @@ export default function Home() {
             />
           </div>
         </section>
-
+        <section id="blog">
+          <h2 className="h2__mobile">My Blog</h2>
+          <Posts postList={postList} />
+        </section>
         <section id="skills">
           <h2 className="h2__mobile">Skills</h2>
           <div className="skills-icons">
@@ -302,6 +307,9 @@ export default function Home() {
           width: 600px;
           margin: 40px auto;
         }
+        #blog {
+          padding: 0 70px;
+        }
 
         #contact {
           padding: 0 70px;
@@ -380,6 +388,10 @@ export default function Home() {
             padding: 0;
           }
 
+          #blog {
+            padding: 0;
+          }
+
           .projects__animation {
             position: static;
             text-align: center;
@@ -419,4 +431,27 @@ export default function Home() {
       `}</style>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const markdownFiles = await fsPromises.readdir("data");
+
+  const postList = markdownFiles.map((filename) => {
+    const slug = filename.replace(/.md$/, "");
+    const [year, month, date, ...rest] = slug.split("-");
+    const createdAt = new Date(`${year} ${month} ${date}`).getTime();
+    const title = rest.join(" ");
+
+    return {
+      slug,
+      createdAt,
+      title,
+    };
+  });
+
+  return {
+    props: {
+      postList,
+    },
+  };
 }

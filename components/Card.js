@@ -10,28 +10,25 @@ const Card = ({ title, date }) => {
       <style jsx>{`
         .card {
           display: block;
-          padding: 0px 20px;
+          padding: 10px 20px;
           min-width: 300px;
           max-width: 350px;
-          margin: 50px 5px;
-          background-color: #ffd5a5;
+          margin: 50px 30px;
+          background-color: #ffefde;
           border: 2px solid #810000;
           box-shadow: 4px 4px 4px #810000;
+          text-align: center;
         }
 
         .card__main {
           display: flex;
           justify-content: space-between;
         }
-        .card__img {
-          height: 50px;
-          width: 80px;
-          margin-top: 10px;
-        }
 
         .card__title {
           font-size: 25px;
           padding-right: 10px;
+          color: #000;
         }
         .card__date {
           font-size: 18px;

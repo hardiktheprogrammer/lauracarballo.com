@@ -68,6 +68,13 @@ export function MenuBar({ open, setOpen }) {
         className="mobile-link"
         href="/#contact"
       >
+        Blog
+      </a>
+      <a
+        onClick={() => setOpen(!open)}
+        className="mobile-link"
+        href="/#contact"
+      >
         Contact
       </a>
       <style jsx>{`

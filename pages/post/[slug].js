@@ -3,34 +3,41 @@ import { promises as fsPromises } from "fs";
 import Markdown from "markdown-to-jsx";
 import Youtube from "../../components/Youtube";
 import Comments from "../../components/Comments";
-import Nav from "../../components/Nav";
+import SecondaryNav from "../../components/SecondaryNav";
+import Head from "../../components/Head";
 
 export default function Post({ post }) {
   return (
     <>
-      <Nav />
-      <div className="post">
-        <div className="post__date">
-          Published {ms(Date.now() - post.createdAt, { long: true })} ago
+      <Head title="Laura Carballo" />
+      <div className="wrapper">
+        <SecondaryNav />
+        <div className="post">
+          <div className="post__date">
+            Published {ms(Date.now() - post.createdAt, { long: true })} ago
+          </div>
+          <h1 className="post__title">{post.title}</h1>
+          <div className="post__content">
+            <Markdown
+              options={{
+                overrides: {
+                  Youtube: { component: Youtube },
+                },
+              }}
+            >
+              {post.content}
+            </Markdown>
+          </div>
         </div>
-        <h1 className="post__title">{post.title}</h1>
-        <div className="post__content">
-          <Markdown
-            options={{
-              overrides: {
-                Youtube: { component: Youtube },
-              },
-            }}
-          >
-            {post.content}
-          </Markdown>
-        </div>
-
         <style jsx>{`
+          .wrapper {
+            width: 80%;
+            margin: 30px auto;
+          }
           .post {
             display: grid;
             place-items: center;
-            padding: 140px 140px 0px 140px;
+            margin: 50px auto;
           }
 
           .post__date {
@@ -42,6 +49,8 @@ export default function Post({ post }) {
             color: #810000;
             font-size: 60px;
             text-align: center;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
           }
           .post__content {
             padding: 30px 100px;
@@ -50,9 +59,6 @@ export default function Post({ post }) {
             box-shadow: 0px 0px 2px 1px #810000;
           }
           @media only screen and (max-width: 767px) {
-            .post {
-              padding: 140px 10px 0px 10px;
-            }
             .post__title {
               font-size: 40px;
             }
@@ -65,7 +71,7 @@ export default function Post({ post }) {
           }
         `}</style>
       </div>
-      <div className="comments">
+      {/* <div className="comments">
         <Comments slug={post.slug} />
         <style jsx>{`
           .comments {
@@ -78,7 +84,7 @@ export default function Post({ post }) {
             }
           }
         `}</style>
-      </div>
+      </div> */}
     </>
   );
 }

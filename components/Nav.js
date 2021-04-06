@@ -22,6 +22,7 @@ const NavLinks = ({ links }) => {
         .nav-link {
           display: flex;
           padding-left: 50px;
+          font-size: 1.25rem;
         }
          {
           /* .nav-active {
@@ -64,6 +65,10 @@ export default function Nav() {
             {
               name: "Projects",
               href: "/#projects",
+            },
+            {
+              name: "Blog",
+              href: "/#blog",
             },
             {
               name: "Contact",

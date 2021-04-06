@@ -57,7 +57,7 @@ export default function AddComments({ onSubmit }) {
           padding: 0px 20px;
           width: 50%;
           margin: 20px 0px;
-          background-color: #ffd5a5;
+          background-color: #ffefde;
           border: 2px solid #810000;
           box-shadow: 2px 2px 2px #810000;
           font-family: "Roboto", sans-serif;
