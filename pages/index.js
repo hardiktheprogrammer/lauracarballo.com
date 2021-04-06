@@ -1,4 +1,4 @@
-import Posts from "../components/blog";
+import Posts from "../components/Blog";
 import { promises as fsPromises } from "fs";
 import Footer from "../components/Footer";
 import Form, { Input, TextArea } from "../components/Form";
