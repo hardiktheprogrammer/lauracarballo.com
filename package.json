@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@arunoda/git-cms": "^1.1.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "markdown-to-jsx": "^7.0.0",
     "next": "^10.0.3",

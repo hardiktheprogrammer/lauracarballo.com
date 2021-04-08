@@ -89,6 +89,7 @@ pre {
   border-radius: 5px;
   font-size: 14px;
   text-align: left;
+  overflow-x: scroll;
 }
 
 code {
@@ -128,9 +129,9 @@ code {
     margin: 20px;
   }
 
-  pre {
+  /* pre {
     overflow: scroll;
     white-space: pre-wrap;
     word-break: break-word;
-  }
+  } */
 }

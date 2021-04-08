@@ -1,4 +1,5 @@
 import Posts from "../components/Blog";
+import axios from "axios";
 import { promises as fsPromises } from "fs";
 import Footer from "../components/Footer";
 import Form, { Input, TextArea } from "../components/Form";
@@ -436,7 +437,7 @@ export default function Home({ postList }) {
 export async function getStaticProps() {
   const markdownFiles = await fsPromises.readdir("data");
 
-  const postList = markdownFiles.map((filename) => {
+  const markdownPostList = markdownFiles.map((filename) => {
     const slug = filename.replace(/.md$/, "");
     const [year, month, date, ...rest] = slug.split("-");
     const createdAt = new Date(`${year} ${month} ${date}`).getTime();
@@ -449,9 +450,39 @@ export async function getStaticProps() {
     };
   });
 
+  const devToPostList = await getDevToPosts();
+
   return {
     props: {
-      postList,
+      postList: [...markdownPostList, ...devToPostList],
     },
   };
+}
+
+async function getDevToPosts() {
+  const { data } = await axios.get("https://dev.to/api/articles/me", {
+    headers: {
+      "Api-Key": process.env.API_KEY,
+    },
+  });
+
+  return data.map((post) => {
+    const {
+      title,
+      canonical_url,
+      public_reactions_count,
+      page_views_count,
+      published_at,
+      comments_count,
+    } = post;
+    return {
+      isDevTo: true,
+      title,
+      url: canonical_url,
+      createdAt: published_at,
+      reactionsCount: public_reactions_count,
+      viewsCount: page_views_count,
+      commentsCount: comments_count,
+    };
+  });
 }

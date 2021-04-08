@@ -59,12 +59,19 @@ export default function Post({ post }) {
             box-shadow: 0px 0px 2px 1px #810000;
           }
           @media only screen and (max-width: 767px) {
+            .wrapper {
+              width: 85%;
+            }
+            .post {
+              display: block;
+              margin: 50px auto;
+            }
             .post__title {
               font-size: 40px;
             }
             .post__content {
               padding: 0px 10px;
-              text-align: justify;
+              text-align: left;
               border-radius: none;
               box-shadow: none;
             }

@@ -1,26 +1,48 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ms from "ms";
-import Card from "./Card";
+import Card, { MarkdownCard } from "./Card";
 
 export default function Posts({ postList }) {
   return (
     <div>
       <main className="blog">
         <div className="blog__row">
-          {postList.map((post) => (
-            <div key={post.slug}>
-              <Link href="/post/[slug]" as={`/post/${post.slug}`}>
-                <a>
-                  <Card
-                    title={post.title}
-                    date={
-                      ms(Date.now() - post.createdAt, { long: true }) + " ago"
-                    }
-                  />
-                </a>
-              </Link>
-            </div>
-          ))}
+          {postList.map((post) => {
+            const href = post.isDevTo ? post.url : `/post/${post.slug}`;
+            return (
+              <div key={post.slug}>
+                <Link href={href}>
+                  {post.isDevTo ? (
+                    <a>
+                      <Card
+                        title={post.title}
+                        date={
+                          ms(Date.now() - new Date(post.createdAt), {
+                            long: true,
+                          }) + " ago"
+                        }
+                        comments={post.commentsCount}
+                        likes={post.reactionsCount}
+                        views={post.viewsCount}
+                      />
+                    </a>
+                  ) : (
+                    <a>
+                      <MarkdownCard
+                        title={post.title}
+                        date={
+                          ms(Date.now() - post.createdAt, { long: true }) +
+                          " ago"
+                        }
+                      />
+                    </a>
+                  )}
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </main>
       <style jsx>{`
@@ -36,8 +58,9 @@ export default function Posts({ postList }) {
           flex-wrap: wrap;
         }
         @media only screen and (max-width: 767px) {
-          .page__inner {
-            margin: 120px 20px;
+          .blog {
+            display: block;
+            margin: 50px auto;
           }
         }
       `}</style>
