@@ -1,6 +1,7 @@
 import Posts from "../components/Blog";
 import axios from "axios";
 import { promises as fsPromises } from "fs";
+import path from "path";
 import Footer from "../components/Footer";
 import Form, { Input, TextArea } from "../components/Form";
 import Head from "../components/Head";
@@ -435,7 +436,9 @@ export default function Home({ postList }) {
 }
 
 export async function getStaticProps() {
-  const markdownFiles = await fsPromises.readdir("data");
+  const markdownDirectory = path.join(process.cwd(), "data");
+
+  const markdownFiles = await fsPromises.readdir(markdownDirectory);
 
   const markdownPostList = markdownFiles.map((filename) => {
     const slug = filename.replace(/.md$/, "");
@@ -456,6 +459,7 @@ export async function getStaticProps() {
     props: {
       postList: [...markdownPostList, ...devToPostList],
     },
+    revalidate: 1800,
   };
 }
 
