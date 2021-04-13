@@ -48,7 +48,6 @@ export default function Card({ title, date, likes, comments, views }) {
           min-width: 350px;
           max-width: 350px;
           min-height: 200px;
-          margin: 50px 30px;
           background-color: #ffefde;
           border: 2px solid #810000;
           box-shadow: 4px 4px 4px #810000;
@@ -109,7 +108,6 @@ export function MarkdownCard({ title, date }) {
           min-width: 350px;
           max-width: 350px;
           min-height: 200px;
-          margin: 50px 30px;
           background-color: #ffefde;
           border: 2px solid #810000;
           box-shadow: 4px 4px 4px #810000;
