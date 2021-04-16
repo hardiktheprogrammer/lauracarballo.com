@@ -83,7 +83,15 @@ export default function Card({ title, date, likes, comments, views }) {
         }
         @media only screen and (max-width: 768px) {
           .card {
-            margin: 50px 15px;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            min-height: 150px;
+            margin: 50px auto;
+            font-size: 15px;
+          }
+          .card__title {
+            font-size: 20px;
           }
         }
       `}</style>
@@ -127,7 +135,14 @@ export function MarkdownCard({ title, date }) {
         }
         @media only screen and (max-width: 768px) {
           .card {
-            margin: 50px 15px;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            min-height: 150px;
+            margin: 50px auto;
+          }
+          .card__title {
+            font-size: 20px;
           }
         }
       `}</style>

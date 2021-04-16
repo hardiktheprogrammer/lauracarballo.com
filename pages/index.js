@@ -47,6 +47,7 @@ export default function Home({ postList }) {
             alt="Laura wearing a nice red hat"
           />
         </div>
+
         <div className="projects__animation">
           <h2 className="projects__title">Projects</h2>
           <div className="projects__svg">
@@ -190,7 +191,7 @@ export default function Home({ postList }) {
               <Input name="email" type="email" label="Email" />
               <TextArea name="message" label="Message" />
             </Form>
-            <div>
+            <div className="social-media">
               <a
                 href="https://github.com/lauracarballo"
                 aria-label="Go to Laura's Github Profile"
@@ -354,13 +355,20 @@ export default function Home({ postList }) {
         }
 
         .icon {
-          font-size: 2rem;
-          margin: 30px;
+          font-size: 1.2rem;
+          margin: 0 20px;
         }
 
         .load {
           width: 15%;
           margin: 0 auto;
+        }
+
+        .social-media {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
         }
 
         @media only screen and (max-width: 768px) {
@@ -400,6 +408,7 @@ export default function Home({ postList }) {
           }
           .projects__title {
             position: static;
+            text-align: center;
           }
 
           .row {
@@ -426,8 +435,13 @@ export default function Home({ postList }) {
           .contact__container {
             flex-direction: column;
           }
-          .icon {
-            margin: 50px 15px;
+
+          .social-media {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
           }
         }
       `}</style>
