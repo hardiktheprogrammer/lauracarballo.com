@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "../components/Head";
 import Burger, { MenuBar } from "../components/MobileNav";
 import MainLink from "../components/MainLink";
+import Link from "next/link";
 
 export default function About() {
   const [open, setOpen] = useState(false);
@@ -25,11 +26,14 @@ export default function About() {
         <div className="content">
           <div className="content-p">
             <p>
-              Hi, i'm <strong>Laura</strong>, a front end developer based in
-              Sydney.
+              Hi, i'm <strong>Laura</strong>, a front end developer at{" "}
+              <a href="https://simplywall.st/" target="_blank">
+                <strong>Simply Wall St</strong>
+              </a>
+              .
             </p>
             <p>
-              My interest for web development began about a year ago when
+              My interest for web development began over two years ago when
               joining a bootcamp and learning{" "}
               <strong>HTML, CSS, and JavaScript</strong>. I fell in love with
               the endless creativity and autonomy that comes with writing

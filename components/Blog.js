@@ -6,39 +6,54 @@ export default function Posts({ postList }) {
   return (
     <div>
       <main className="blog">
-        {postList.map((post) => {
-          const href = post.isDevTo ? post.url : `/post/${post.slug}`;
-          return (
-            <div key={post.slug}>
-              <Link href={href}>
-                {post.isDevTo ? (
-                  <a>
-                    <Card
-                      title={post.title}
-                      date={
-                        ms(Date.now() - new Date(post.createdAt), {
-                          long: true,
-                        }) + " ago"
-                      }
-                      comments={post.commentsCount}
-                      likes={post.reactionsCount}
-                      views={post.viewsCount}
-                    />
-                  </a>
-                ) : (
-                  <a>
-                    <MarkdownCard
-                      title={post.title}
-                      date={
-                        ms(Date.now() - post.createdAt, { long: true }) + " ago"
-                      }
-                    />
-                  </a>
-                )}
-              </Link>
-            </div>
-          );
-        })}
+        <>
+          {postList.map((post) => {
+            const href = post.isDevTo ? post.url : `/post/${post.slug}`;
+            return (
+              <div key={post.slug}>
+                <Link href={href}>
+                  {post.isDevTo ? (
+                    <a target="_blank">
+                      <Card
+                        title={post.title}
+                        date={
+                          ms(Date.now() - new Date(post.createdAt), {
+                            long: true,
+                          }) + " ago"
+                        }
+                        comments={post.commentsCount}
+                        likes={post.reactionsCount}
+                        views={post.viewsCount}
+                      />
+                    </a>
+                  ) : (
+                    <a target="_blank">
+                      <MarkdownCard
+                        title={post.title}
+                        date={
+                          ms(Date.now() - post.createdAt, { long: true }) +
+                          " ago"
+                        }
+                      />
+                    </a>
+                  )}
+                </Link>
+              </div>
+            );
+          })}
+          <Link href="https://blog.logrocket.com/testing-accessibility-storybook/">
+            <a target="_blank">
+              <MarkdownCard
+                title="Testing accessibility with Storybook"
+                date={
+                  ms(Date.now() - new Date(`2021 September 28`).getTime(), {
+                    long: true,
+                  }) + " ago"
+                }
+              />
+            </a>
+          </Link>
+        </>
       </main>
       <style jsx>{`
         .blog {

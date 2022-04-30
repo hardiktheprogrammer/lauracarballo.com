@@ -2,7 +2,7 @@
 
 A website for my portfolio built using the NextJS framework and deployed using Vercel.
 
-![Portfolio](./public/readme-image.png)
+![Portfolio](./public/readMe-image.png)
 
 ## Getting Started
 
